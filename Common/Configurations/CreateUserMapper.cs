@@ -3,7 +3,7 @@ using Common.Interfaces;
 using Common.Models.Business;
 using Common.Models.WebAPI;
 
-namespace Common.Mappers
+namespace Common.Configurations
 {
     public class CreateUserMapper : ICreateUserMapper
     {
@@ -13,7 +13,6 @@ namespace Common.Mappers
         {
             _mapper = mapper;
         }
-
         public CreateUser ToBusinessModel(CreateUserDto dto)
         {
             return _mapper.Map<CreateUser>(dto);

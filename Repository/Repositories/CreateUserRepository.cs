@@ -1,4 +1,5 @@
-﻿using Repository.Interfaces;
+﻿using Common.Models.Business;
+using Repository.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,11 @@ using System.Threading.Tasks;
 
 namespace Repository.Repositories
 {
-    internal class CreateUserRepository : ICreateUserRepository
+    public class CreateUserRepository : ICreateUserRepository
     {
+        public Task<string> CreateUserAsync(CreateUser user) 
+        {
+            return Task.FromResult("User created");
+        }
     }
 }

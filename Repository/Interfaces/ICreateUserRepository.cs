@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common.Models.Business;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace Repository.Interfaces
 {
     public interface ICreateUserRepository
     {
+        public Task<string> CreateUserAsync(CreateUser user);
     }
 }

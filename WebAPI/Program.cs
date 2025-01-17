@@ -1,6 +1,11 @@
 
 using Business.Interfaces;
 using Business.Services;
+using Common.Configurations;
+using Common.Interfaces;
+using Common.Mappers;
+using Repository.Interfaces;
+using Repository.Repositories;
 
 namespace WebAPI
 {
@@ -16,7 +21,10 @@ namespace WebAPI
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
             builder.Services.AddSingleton<ICreateUserService, CreateUserService>();
-            builder.Services.AddAutoMapper(typeof(Program).Assembly);
+            builder.Services.AddSingleton<ICreateUserMapper, CreateUserMapper>();
+            builder.Services.AddSingleton<ICreateUserRepository, CreateUserRepository>();
+            builder.Services.AddAutoMapper(typeof(MappingProfile));
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
