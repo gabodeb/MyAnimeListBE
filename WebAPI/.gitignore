@@ -1,0 +1,7 @@
+/properties
+/bin
+/build
+/obj
+appsettings.json
+appsettings.Development.json
+/.vs
